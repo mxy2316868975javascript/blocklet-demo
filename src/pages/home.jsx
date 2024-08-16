@@ -1,49 +1,94 @@
-import { useState } from 'react';
-import reactLogo from '../assets/react.svg';
-import blockletLogo from '../assets/blocklet.svg';
-import viteLogo from '../assets/vite.svg';
-import './home.css';
+import React, { useState, useEffect } from 'react';
+import { Form, Input, Button, Card, Row, Col, Divider } from 'antd';
 import api from '../libs/api';
+import './home.css';
+import { message } from 'antd';
 
-function Home() {
-  const [count, setCount] = useState(0);
+const BaseLayout = ({label, value}) => {
+  return (
+    <Row gutter={[10, 10]} style={{width:'100%'}}>
+      <Col flex="100px" align="right">
+        <strong>{label}:</strong>
+      </Col>
+      <Col flex="auto" align="left">
+        {value}
+      </Col>
+    </Row>
+  )
+}
 
-  async function getApiData() {
-    const { data } = await api.get('/api/data');
-    const { message } = data;
-    alert(`Message from api: ${message}`);
-  }
+const Home = () => {
+  const [profile, setProfile] = useState({});
+  const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    // 获取用户Profile信息
+    api
+      .get('/api/profile')
+      .then((res) => {
+        if (res.status === 200) {
+          setProfile(res.data);
+        }
+      })
+      .catch((error) => {
+        message.error(error);
+      });
+  }, []);
+
+  const handleSave = (values) => {
+    // 保存用户Profile信息
+    api
+      .post('/api/profile', values)
+      .then((res) => {
+        if (res.status === 200) {
+          setProfile(values);
+          setEditMode(false);
+          message.success('保存成功');
+        }
+      })
+      .catch((error) => {
+        message.error(error);
+      });
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://www.arcblock.io/docs/blocklet-developer/getting-started" target="_blank" rel="noreferrer">
-          <img src={blockletLogo} className="logo blocklet" alt="Blocklet logo" />
-        </a>
-      </div>
-      <h1>Vite + React + Blocklet</h1>
-      <div className="card">
-        <button type="button" onClick={() => setCount((currentCount) => currentCount + 1)}>
-          count is {count}
-        </button>
-        <br />
-        <br />
-        <button type="button" onClick={getApiData}>
-          Get API Data
-        </button>
-        <p>
-          Edit <code>src/app.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+    <div className="container">
+      <Card title={`${editMode ? '编辑': ''}用户信息`} style={{ width: 360 }}>
+        {editMode ? (
+          <Form initialValues={profile} onFinish={handleSave} layout="vertical">
+            <Form.Item name="username" label="用户名" rules={[{ required: true, message: '请填写用户名！' }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="email" label="邮箱" rules={[{ required: true, message: '请填写邮箱！' }]}>
+              <Input type="email" />
+            </Form.Item>
+            <Form.Item name="phone" label="联系方式" rules={[{ required: true, message: '请填写联系方式！' }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                保存
+              </Button>
+              <Button style={{ marginLeft: '10px' }} onClick={() => setEditMode(false)}>
+                取消
+              </Button>
+            </Form.Item>
+          </Form>
+        ) : (
+          <Row gutter={[0, 24]} style={{ width: '100%' }}>
+            <BaseLayout label='用户名' value={profile.username}/>
+            <BaseLayout label='邮箱' value={profile.email}/>
+            <BaseLayout label='联系方式' value={profile.phone}/>
+            <Row type='flex' align='center' style={{width: '100%'}}>
+              <Button type="primary" onClick={() => setEditMode(true)}>
+                编辑
+              </Button>
+            </Row>
+          </Row>
+        )}
+      </Card>
+    </div>
   );
-}
+};
 
 export default Home;
