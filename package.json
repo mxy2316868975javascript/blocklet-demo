@@ -45,12 +45,14 @@
     "@ocap/mcrypto": "^1.18.128",
     "@ocap/wallet": "^1.18.128",
     "antd": "^5.20.1",
-    "axios": "^1.7.4",
+    "antd-img-crop": "^4.23.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv-flow": "^4.1.0",
     "express": "^4.19.2",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "multer": "1.4.5-lts.1",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.3.2",
@@ -68,7 +70,7 @@
     "react-router-dom": "^6.24.0",
     "rimraf": "^5.0.7",
     "simple-git-hooks": "^2.11.1",
-    "vite": "^5.3.5",
+    "vite": "^5.4.1",
     "vite-plugin-blocklet": "^0.9.1",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.4"

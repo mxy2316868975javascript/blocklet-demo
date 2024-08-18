@@ -1,0 +1,19 @@
+.avatar-upload-container {
+  position: relative;
+  text-align: center;
+
+  .avatar {
+    padding: 6px;
+    border: 1px solid #eee;
+    ;
+    border-radius: 50%;
+  }
+
+  .avatar-upload-container-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+  }
+}

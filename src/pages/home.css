@@ -1,13 +1,36 @@
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
-}
+.container {
+  .logo {
+    width: 160px;
+    margin: 10px 0 0 10px;
+  }
 
-.card {
-  padding: 2em;
-}
+  .main-continer {
+    margin: 12rem auto;
+    text-align: center;
 
-.read-the-docs {
-  color: #888;
+    .editor-btn {
+      border: 1px solid #eee;
+      border-radius: 30px;
+      padding: 0 24px;
+      margin: 6px 0;
+    }
+
+    .user-label {
+      height: 44px;
+      line-height: 44px;
+      text-align: justify;
+
+    }
+
+    .user-label:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+
+    .avatar-container {
+      padding: 10px 10px 0;
+    }
+  }
+
 }

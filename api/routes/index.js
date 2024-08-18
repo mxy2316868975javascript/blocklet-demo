@@ -1,15 +1,15 @@
-const middleware = require('@blocklet/sdk/lib/middlewares');
 const router = require('express').Router();
 const profileRoutes = require('./profileRoutes');
+const avatarUploadRoutes = require('./uploadRoutes');
+// const express = require('express');
+// const path = require('path');
 
-router.use('/user', middleware.user(), (req, res) => res.json(req.user || {}));
-
-router.use('/data', (req, res) =>
-  res.json({
-    message: 'Hello Blocklet!',
-  }),
-);
 
 router.use('/profile', profileRoutes);
+router.use('/avatar', avatarUploadRoutes);
+
+// 存在uploads文件夹下
+// router.use('/avatar', express.static(path.join(__dirname, 'public', 'uploads')));
+// router.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 module.exports = router;
