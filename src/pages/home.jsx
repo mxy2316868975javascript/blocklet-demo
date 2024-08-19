@@ -10,6 +10,7 @@ import {
   CopyOutlined,
   EditOutlined,
   SaveOutlined,
+  __,
 } from '@ant-design/icons';
 import AvatarUpload from '../components/AvatarUpload';
 import './home.css';
