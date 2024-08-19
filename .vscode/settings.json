@@ -1,3 +1,312 @@
 {
-    "editor.formatOnSave": true
+    // 头部注释
+
+    "fileheader.customMade": {
+        "Description": "",
+
+        "Author": "git config user.email", // 同时获取用户名与邮箱
+
+        "Date": "Do not edit",
+
+        "LastEditors": "git config user.email",
+
+        "LastEditTime": "Do not edit" // 文件最后编辑时间
+    },
+
+    // 函数注释
+
+    "fileheader.cursorMode": {
+        "description": "", // 函数注释生成之后，光标移动到这里
+
+        "param": "", // param 开启函数参数自动提取 需要将光标放在函数行或者函数上方的空白行
+
+        "return": ""
+    },
+
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+
+    "workbench.iconTheme": "material-icon-theme",
+
+    "workbench.startupEditor": "newUntitledFile",
+
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash",
+
+            "icon": "terminal-bash"
+        },
+
+        "zsh": {
+            "path": "/bin/zsh"
+        }
+    },
+
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "/bin/bash",
+
+            "args": ["-l"],
+
+            "icon": "terminal-bash"
+        },
+
+        "zsh": {
+            "path": "/bin/zsh",
+
+            "args": ["-l"]
+        }
+    },
+
+    "window.openFoldersInNewWindow": "on",
+
+    "json.format.enable": true,
+
+    "html.format.enable": false,
+
+    "typescript.format.enable": true,
+
+    "eslint.enable": true,
+
+    "eslint.alwaysShowStatus": true,
+
+    "eslint.format.enable": true,
+
+    "eslint.validate": [
+        "html",
+
+        {
+            "language": "javascript",
+
+            "autoFix": true
+        },
+
+        {
+            "language": "javascriptreact",
+
+            "autoFix": true
+        },
+
+        {
+            "language": "typescript",
+
+            "autoFix": true
+        },
+
+        {
+            "language": "typescriptreact",
+
+            "autoFix": true
+        }
+    ],
+
+    "stylelint.enable": true,
+
+    "stylelint.validate": ["css", "scss"],
+
+    "terminal.integrated.scrollback": 10000,
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.stylelint": "explicit"
+    },
+
+    "editor.fontSize": 12,
+
+    "search.exclude": {
+        "**/node_modules": true,
+
+        "**/bower_components": true,
+
+        "build/": true,
+
+        "temp/": true,
+
+        "library/": true,
+
+        "**/*.anim": true
+    },
+
+    "files.exclude": {
+        "**/.git": true,
+
+        "**/.DS_Store": true,
+
+        "**/*.meta": true,
+
+        "library/": true,
+
+        "local/": true,
+
+        "temp/": true,
+
+        "**/node_modules": false
+    },
+
+    "files.associations": {
+        "*.cjson": "jsonc",
+
+        "*.wxss": "css",
+
+        "*.wxs": "javascript"
+    },
+
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+
+    "minapp-vscode.disableAutoConfig": true,
+
+    "terminal.integrated.allowChords": false,
+
+    "css.lint.duplicateProperties": "error",
+
+    "scss.lint.duplicateProperties": "error",
+
+    "editor.formatOnSave": true,
+
+    "prettier.ignorePath": "./normalH5/.prettierignore",
+
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[scss]": {
+        "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    },
+
+    "eslint.workingDirectories": ["./normalH5"],
+
+    "files.autoSave": "onFocusChange",
+
+    "workbench.editor.enablePreview": true,
+
+    "workbench.editor.showTabs": "multiple",
+
+    "security.workspace.trust.untrustedFiles": "open",
+
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+
+    "debug.javascript.autoAttachFilter": "disabled",
+
+    "pxx-vscode-extension.diffMode.ShowDiffTreeView": true,
+
+    "git.autofetch": true,
+
+    "editor.minimap.enabled": false,
+
+    "explorer.autoRevealExclude": {
+        "**/node_modules": false
+    },
+
+    "javascript.updateImportsOnFileMove.enabled": "always",
+
+    "diffEditor.maxComputationTime": 0,
+
+    "editor.fontFamily": "Fira Code",
+
+    "terminal.integrated.fontFamily": "Fira Code",
+
+    "editor.fontWeight": "normal",
+
+    "workbench.colorTheme": "Default Dark+",
+
+    "todohighlight.keywords": [
+        "NOTE:", // TODO:
+
+        "DEBUG:",
+
+        "REVIEW:",
+
+        {
+            "text": "TEST:",
+
+            "color": "#fff",
+
+            "backgroundColor": "#FF6534",
+
+            "isWholeLine": false
+        },
+
+        {
+            "text": "ERROR:",
+
+            "color": "red",
+
+            "border": "1px solid red",
+
+            "borderRadius": "2px", //doc: using borderRadius along with `border` or you will see nothing change
+
+            "backgroundColor": "rgba(0,0,0,.2)"
+
+            //other styling properties goes here ...
+        }
+    ],
+
+    "turboConsoleLog.quote": "'",
+
+    "vscodeFunTools.needMatchComponent": true,
+
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+
+    "typescript.inlayHints.parameterNames.enabled": "all",
+
+    "typescript.inlayHints.parameterTypes.enabled": true,
+
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+
+    "javascript.inlayHints.parameterNames.enabled": "all",
+
+    "javascript.inlayHints.parameterTypes.enabled": true,
+
+    "editor.inlayHints.fontSize": 16,
+
+    "editor.inlayHints.fontFamily": "Annel MN",
+
+    "workbench.colorCustomizations": {
+        // Overrides Theme Default Colors for InlayHints feature
+        // "editorInlayHint.background": "#ffffffcc",
+        // "editorInlayHint.foreground": "#cecececc",
+        // Overrides Theme Parameter hints fg for InlayHints feature
+        // "editorInlayHint.parameterBackground": "#ffffffcc",
+        // "editorInlayHint.parameterForeground": "#e0e0e05f"
+        // Overrides Theme Type hints fg for InlayHints feature
+        // "editorInlayHint.typeBackground": "#08000088",
+        // "editorInlayHint.typeForeground": "#DDEEFF88"
+    },
+
+    "vscodeFunTools.functionConfig": {
+        "mobile-business": {
+            "imageZipUtil": "(imageName, ext='png') =>{return 'https://funimg.pxxpic.com/common/business/' + `${imageName}.${ext}.slim` + '.' + ext;}",
+
+            "imageUtil": "(imageName, ext='png', isZip = false) =>{return 'https://funimg.pxxpic.com/common/business/' + `${imageName}.${ext}` + (isZip ? `.slim.${ext}` : '');}",
+
+            "imageKv": "(imageName) =>{return 'https://funimg.pxxpic.com/common/business/' + imageName;}"
+        }
+    },
+    "github-enterprise.uri": "https://github.com/"
 }

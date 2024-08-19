@@ -7,7 +7,7 @@ import {
 // import { CameraOutlined } from '@ant-design/icons';
 import api from '../../libs/api';
 import './index.css';
-
+console.log(1);
 const AvatarUpload = ({
   avatarUrl,
   // , editMode, onAvatarChange
